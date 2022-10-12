@@ -4,6 +4,7 @@ namespace Serialization.Abstractions
 {
 	public interface ITraceResultSerializer
 	{
-		void Serialize(TraceResult traceResult, Stream to);
+        string Format { get; }
+        void Serialize(TraceResult traceResult, Stream to);
 	}
 }

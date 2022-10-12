@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <thread id="10" time="1087ms">
+    <method name="M1" class="TestMethods" time="110ms" />
+    <method name="M2" class="TestMethods" time="218ms">
+      <method name="M1" class="TestMethods" time="109ms" />
+    </method>
+    <method name="M2" class="TestMethods" time="210ms">
+      <method name="M1" class="TestMethods" time="109ms" />
+    </method>
+    <method name="M3" class="TestMethods" time="549ms">
+      <method name="M1" class="TestMethods" time="110ms" />
+      <method name="M2" class="TestMethods" time="219ms">
+        <method name="M1" class="TestMethods" time="109ms" />
+      </method>
+      <method name="M2" class="TestMethods" time="219ms">
+        <method name="M1" class="TestMethods" time="109ms" />
+      </method>
+    </method>
+  </thread>
+  <thread id="11" time="1087ms">
+    <method name="M1" class="TestMethods" time="110ms" />
+    <method name="M2" class="TestMethods" time="218ms">
+      <method name="M1" class="TestMethods" time="109ms" />
+    </method>
+    <method name="M2" class="TestMethods" time="210ms">
+      <method name="M1" class="TestMethods" time="109ms" />
+    </method>
+    <method name="M3" class="TestMethods" time="549ms">
+      <method name="M1" class="TestMethods" time="109ms" />
+      <method name="M2" class="TestMethods" time="219ms">
+        <method name="M1" class="TestMethods" time="109ms" />
+      </method>
+      <method name="M2" class="TestMethods" time="219ms">
+        <method name="M1" class="TestMethods" time="109ms" />
+      </method>
+    </method>
+  </thread>
+</root>

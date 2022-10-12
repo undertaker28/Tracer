@@ -2,10 +2,10 @@
 {
 	public class ThreadTraceResult
 	{
-		public ThreadTraceResult(int threadId, long totalTime, IReadOnlyList<MethodTraceResult> methods)
+		public ThreadTraceResult(int threadId, long time, IReadOnlyList<MethodTraceResult> methods)
 		{
 			Id = threadId;
-			ExecutionTime = totalTime;
+			ExecutionTime = time;
 			MethodTraceResults = methods;
 		}
 

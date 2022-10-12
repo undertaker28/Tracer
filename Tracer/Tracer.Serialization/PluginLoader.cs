@@ -5,7 +5,6 @@ namespace Tracer.Serialization
 {
 	public static class PluginLoader
 	{
-
 		public static List<ITraceResultSerializer> Load(string directory)
 		{
 			var result = new List<ITraceResultSerializer>();

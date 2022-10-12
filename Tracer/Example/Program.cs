@@ -8,16 +8,16 @@ var test = new TestMethods(tracer);
 var t1 = new Thread(() =>
 {
 	test.M1();
-	//test.M2();
-	//test.M3();
+	test.M2();
+	test.M3();
 });
 t1.Start();
 
 var t2 = new Thread(() =>
 {
-	//test.M1();
+	test.M1();
 	test.M2();
-	//test.M3();
+	test.M3();
 });
 t2.Start();
 
@@ -26,12 +26,15 @@ t2.Join();
 
 var traceResult = tracer.GetTraceResult();
 
-var pluginPath = "../../../Plugins/";
+const string pluginPath = "../../../Plugins/";
+const string resultPath = "../../../TraceResults/TraceResult";
 
 var pluginList = PluginLoader.Load(pluginPath);
 
-for (int i = 1; i <= pluginList.Count; i++)
+for (int i = 0; i < pluginList.Count; i++)
 {
-	using var fileStream = new FileStream(pluginPath + $"test{i}.txt", FileMode.Create, FileAccess.Write);
-	pluginList[i - 1].Serialize(traceResult, fileStream);
+	using (var fileStream = new FileStream($"{resultPath}.{pluginList[i].Format}", FileMode.Create, FileAccess.Write))
+	{
+        pluginList[i].Serialize(traceResult, fileStream);
+    }
 }

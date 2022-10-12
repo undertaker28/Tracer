@@ -1,12 +1,12 @@
 ﻿namespace Core.Models
 {
 	public class MethodTraceResult
-	{
+    {
 		public MethodTraceResult(string name, string className, long time, IReadOnlyList<MethodTraceResult> innerMethods)
 		{
 			MethodName = name;
 			ClassName = className;
-			ExecutionTime = time;
+            ExecutionTime = time;
 			InnerMethodTraceResults = innerMethods;
 		}
 

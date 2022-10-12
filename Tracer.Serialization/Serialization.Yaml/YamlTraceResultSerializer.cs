@@ -1,6 +1,5 @@
 ﻿using Core.Models;
 using Serialization.Abstractions;
-using System.Net.WebSockets;
 using System.Text;
 using YamlDotNet.Serialization;
 using YamlDotNet.Serialization.NamingConventions;
@@ -9,20 +8,20 @@ namespace Serialization.Json
 {
 	public class YamlTraceResultSerializer : ITraceResultSerializer
 	{
-		public void Serialize(TraceResult traceResult, Stream to)
+        public string Format { get; } = "yaml";
+        public void Serialize(TraceResult traceResult, Stream to)
 		{
 			var result = Mapper.MapToSerializationModel(traceResult);
 			
 			var serializer = new SerializerBuilder()
-				.WithNamingConvention(CamelCaseNamingConvention.Instance)
-				.WithIndentedSequences()
-				.Build();
+                .WithNamingConvention(CamelCaseNamingConvention.Instance)
+                .Build();
 
-			var yamlResult = serializer.Serialize(result);
+            var yamlResult = serializer.Serialize(result);
 
 			using var sw = new StreamWriter(to);
-			sw.Write(yamlResult);
-			sw.Flush();	
+			sw.Write(Encoding.Default.GetBytes(yamlResult));
+            sw.Flush();	
 		}
 	}
 }

@@ -7,7 +7,7 @@ namespace Core.Tracers
 	{
         private List<MethodTracer> methodTracers { get; }
 
-        private int nestingСounter = 0;
+        private int nestingLevel = 0;
         private readonly int threadId;
 
         public ThreadTracer(int threadTracerId)
@@ -18,9 +18,6 @@ namespace Core.Tracers
 
 		public ThreadTraceResult GetTraceResult()
 		{
-			if (nestingСounter != 0)
-				throw new InvalidOperationException("Different amount of StartTrace and StopTrace");
-
 			var threadTrace = new ThreadTraceResult(threadId,
                 methodTracers.Select(t => t.GetTraceResult()).Sum(method => method.ExecutionTime),
                 methodTracers.Select(t => t.GetTraceResult()).ToList());
@@ -29,26 +26,20 @@ namespace Core.Tracers
 
 		public void StartTrace()
 		{
-			if (nestingСounter == 0)
+			if (nestingLevel == 0)
 			{
 				var methodTracer = new MethodTracer();
                 methodTracers.Add(methodTracer);
 			}
-			else if (nestingСounter < 0)
-				throw new InvalidOperationException("Different amount of StartTrace and StopTrace");
 
-            nestingСounter++;
-
+            nestingLevel++;
             methodTracers.Last().StartTrace();
 		}
 
 		public void StopTrace()
 		{
-			if (nestingСounter <= 0)
-				throw new InvalidOperationException("Different amount of StartTrace and StopTrace");
-
             methodTracers.Last().StopTrace();
-            nestingСounter--;
+            nestingLevel--;
 		}
 	}
 }

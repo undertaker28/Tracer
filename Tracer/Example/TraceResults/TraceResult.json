@@ -1,0 +1,158 @@
+{
+  "threads": [
+    {
+      "id": 10,
+      "time": "1087ms",
+      "methods": [
+        {
+          "name": "M1",
+          "class": "TestMethods",
+          "time": "110ms",
+          "methods": []
+        },
+        {
+          "name": "M2",
+          "class": "TestMethods",
+          "time": "218ms",
+          "methods": [
+            {
+              "name": "M1",
+              "class": "TestMethods",
+              "time": "109ms",
+              "methods": []
+            }
+          ]
+        },
+        {
+          "name": "M2",
+          "class": "TestMethods",
+          "time": "210ms",
+          "methods": [
+            {
+              "name": "M1",
+              "class": "TestMethods",
+              "time": "109ms",
+              "methods": []
+            }
+          ]
+        },
+        {
+          "name": "M3",
+          "class": "TestMethods",
+          "time": "549ms",
+          "methods": [
+            {
+              "name": "M1",
+              "class": "TestMethods",
+              "time": "110ms",
+              "methods": []
+            },
+            {
+              "name": "M2",
+              "class": "TestMethods",
+              "time": "219ms",
+              "methods": [
+                {
+                  "name": "M1",
+                  "class": "TestMethods",
+                  "time": "109ms",
+                  "methods": []
+                }
+              ]
+            },
+            {
+              "name": "M2",
+              "class": "TestMethods",
+              "time": "219ms",
+              "methods": [
+                {
+                  "name": "M1",
+                  "class": "TestMethods",
+                  "time": "109ms",
+                  "methods": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "time": "1087ms",
+      "methods": [
+        {
+          "name": "M1",
+          "class": "TestMethods",
+          "time": "110ms",
+          "methods": []
+        },
+        {
+          "name": "M2",
+          "class": "TestMethods",
+          "time": "218ms",
+          "methods": [
+            {
+              "name": "M1",
+              "class": "TestMethods",
+              "time": "109ms",
+              "methods": []
+            }
+          ]
+        },
+        {
+          "name": "M2",
+          "class": "TestMethods",
+          "time": "210ms",
+          "methods": [
+            {
+              "name": "M1",
+              "class": "TestMethods",
+              "time": "109ms",
+              "methods": []
+            }
+          ]
+        },
+        {
+          "name": "M3",
+          "class": "TestMethods",
+          "time": "549ms",
+          "methods": [
+            {
+              "name": "M1",
+              "class": "TestMethods",
+              "time": "109ms",
+              "methods": []
+            },
+            {
+              "name": "M2",
+              "class": "TestMethods",
+              "time": "219ms",
+              "methods": [
+                {
+                  "name": "M1",
+                  "class": "TestMethods",
+                  "time": "109ms",
+                  "methods": []
+                }
+              ]
+            },
+            {
+              "name": "M2",
+              "class": "TestMethods",
+              "time": "219ms",
+              "methods": [
+                {
+                  "name": "M1",
+                  "class": "TestMethods",
+                  "time": "109ms",
+                  "methods": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
